@@ -188,27 +188,17 @@ a {
    background: var(--first-color-lighten); 
 }
 
-/* ===== HERO SECTION ===== */
 .hero {
   background: url('images/restaurant-view.jpg') center/cover no-repeat;
-  height: 90vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
   position: relative;
+  padding: 2rem;
 }
-
-/* .hero__img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  position: relative;
-  z-index: 2;
-} */
 
 .hero::after {
   content: "";
@@ -264,6 +254,10 @@ a {
 }
 
 .product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background: #fff;
   border-radius: 1rem;
   padding: 1rem;
@@ -277,6 +271,7 @@ a {
   object-fit: cover;
   border-radius: .75rem;
   margin-bottom: 1rem;
+  display: block;
 }
 
 .product-card:hover {
@@ -319,7 +314,7 @@ a {
 }
 
 .why__item i {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--first-color);
   margin-bottom: 1rem;
   display: block;
