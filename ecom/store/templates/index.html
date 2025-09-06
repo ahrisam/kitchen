@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Navbar Example</title>
+</head>
+<body>
+    <!--HEADER-->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="#" class="nav__logo" >
+                    <img src="images/logo.png" alt="logo"> Saminel Flame
+                </a>
+            </div> 
+
+            <div class="nav__toggle" id="nav-toggle" aria-label="Open menu" tabindex="0">
+                <i class="ri-menu-line nav__toggle-menu"></i>
+                <i class="ri-close-line nav__toggle-close"></i>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="navlist">
+                    <li>
+                        <a href="#" class="nav__link">Home</a>
+                    </li>
+                    <!-- dropdown 1-->
+                    <li class="dropdown__item">
+                        <div class="nav__link dropdown__button">Menu
+                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+                    </li>
+                    <!-- dropdown 2-->
+                    <li class="dropdown__item">
+                        <div class="nav__link dropdown__button">About
+                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+                    </li>
+                    <!-- dropdown 3-->
+                    <li class="dropdown__item">
+                        <div class="nav__link dropdown__button">Our Story
+                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+                    </li>
+                    <!-- dropdown 4 -->
+                    <li class="dropdown__item">
+                        <div class="nav__link dropdown__button">Contact
+                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__content container">
+                <h1>Find Your Taste</h1>
+                <p>Bakery &amp; Cafe</p>
+                <button class="btn">See all Products</button>
+            </div>
+        </section>
+
+        <!-- Best Seller Section -->
+        <section class="best-seller container">
+            <h2>Best Seller</h2>
+            <div class="products">
+            <div class="product-card">
+                <img src="images/chocolate-croissant.jpg" alt="Chocolate Croissant">
+                <h3>Chocolate Croissant</h3>
+                <p>₵20.00</p>
+            </div>
+            <div class="product-card">
+                <img src="images/strawberry-cake.jpg" alt="Strawberry Cake">
+                <h3>Strawberry Cake</h3>
+                <p>₵35.00</p>
+            </div>
+            <div class="product-card">
+                <img src="images/blueberry-muffin.jpg" alt="Blueberry Muffin">
+                <h3>Blueberry Muffin</h3>
+                <p>₵15.00</p>
+            </div>
+            <div class="product-card">
+                <img src="images/cappuccino.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>₵25.00</p>
+            </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose container">
+            <h2>Why Choose Us?</h2>
+            <div class="why__grid">
+            <div class="why__item">
+                <i class="ri-star-smile-line"></i>
+                <h3>Best Quality</h3>
+                <p>We use the finest ingredients for an unforgettable taste.</p>
+            </div>
+            <div class="why__item">
+                <i class="ri-truck-line"></i>
+                <h3>Fast Delivery</h3>
+                <p>Your orders are delivered quickly to ensure they arrive fresh at your table.</p>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!--MAIN JS-->
+    <script src="script.js"></script>
+</body>
+</html>
