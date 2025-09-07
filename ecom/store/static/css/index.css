@@ -189,7 +189,7 @@ a {
 }
 
 .hero {
-  background: url('images/restaurant-view.jpg') center/cover no-repeat;
+  background: url("../images/restaurant-view.jpg") center/cover no-repeat; 
   min-height: 80vh;
   display: flex;
   align-items: center;

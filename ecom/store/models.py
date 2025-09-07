@@ -15,6 +15,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.CharField(max_length= 250, default='', blank=True)
     image = models.ImageField(upload_to='uploads/product')
+    is_bestseller = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

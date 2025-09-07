@@ -1,1 +1,5 @@
 ecom/ecom/__pycache__/settings.cpython-312.pyc
+ecom/db.sqlite3
+*.pyc
+*.pyc
+*.pyc
