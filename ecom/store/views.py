@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from . models import Product
+from .models import Product
 
 
-def starter_page(request):
+def index(request):
     products = Product.objects.all()
-    return render(request, "index.html", {'product:': products})
+    return render(request, 'index.html', {'products': products})

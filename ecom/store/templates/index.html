@@ -27,28 +27,8 @@
         <!-- Best Seller Section -->
         <section class="best-seller container">
             <h2>Best Seller</h2>
-            <div class="products">
-            <div class="product-card">
-                <img src="{% static 'images/chocolate-croissant.jpg'%}" alt="Chocolate Croissant">
-                <h3>Chocolate Croissant</h3>
-                <p>₵20.00</p>
-            </div>
-            <div class="product-card">
-                <img src="{% static 'images/strawberry-cake.jpg'%}" alt="Strawberry Cake">
-                <h3>Strawberry Cake</h3>
-                <p>₵35.00</p>
-            </div>
-            <div class="product-card">
-                <img src="{% static 'images/blueberry-muffin.jpg'%}" alt="Blueberry Muffin">
-                <h3>Blueberry Muffin</h3>
-                <p>₵15.00</p>
-            </div>
-            <div class="product-card">
-                <img src="{% static 'images/cappuccino.jpg' %}" alt="Cappuccino">
-                <h3>Cappuccino</h3>
-                <p>₵25.00</p>
-            </div>
 
+            <div class="products">
             {% for product in products %}
                <div class="product-card">
                 <img src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -56,9 +36,8 @@
                 <p>₵{{product.price}}</p>
             </div>
             {% endfor %}
-
-
             </div>
+            
         </section>
 
         <!-- Why Choose Us Section -->
