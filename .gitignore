@@ -4,3 +4,8 @@ ecom/db.sqlite3
 *.pyc
 *.pyc
 *.pyc
+/virt
+*.pyc
+*.pyc
+*.pyc
+ecom/store/__pycache__/views.cpython-312.pyc
