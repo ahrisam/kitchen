@@ -30,13 +30,30 @@
 
             <div class="products">
             {% for product in products %}
+                {% if product.is_bestseller %}
                <div class="product-card">
                 <img src="{{ product.image.url }}" alt="{{ product.name }}">
                 <h3>{{ product.name }}</h3>
                 <p>₵{{product.price}}</p>
             </div>
+                {% endif%}
             {% endfor %}
             </div>
+         </div>   
+
+          <h2>Menu</h2>
+
+            <div class="products">
+            {% for category in categories %}
+                <a href="{% url 'category' category.name %}">
+               <div class="product-card">
+                <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                <h3>{{ category.name }}</h3>
+               </a>
+            </div>
+            {% endfor %}
+            </div>
+         </div>   
             
         </section>
 
