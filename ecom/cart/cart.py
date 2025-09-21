@@ -8,3 +8,6 @@ class Cart():
             cart = self.session['session_key'] = {}
 
         self.cart = cart
+
+    def __len__(self):
+        return len(self.cart)

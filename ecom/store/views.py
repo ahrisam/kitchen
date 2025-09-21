@@ -6,12 +6,14 @@ def index(request):
     products = Product.objects.all()
     categories = Category.objects.all()
 
-
     return render(request, 'index.html',{'products': products,'categories':categories})
 
-def category(request, foo):
-    foo = foo.replace('-', ' ')
-    category = Category.objects.get(name=foo)
-    products = Product.objects.filter(category=category)
+def product(request, pk):
+    product = Product.objects.get(id=pk)
+    return render(request, "product.html", {'product':product})
 
-    return render(request, 'product.html', {'products':products, 'category':category })
+# def category(request, foo):
+#     foo = foo.replace('-', ' ')
+#     caterogies = Category.objects.get(name=foo)
+#     product = Category.objects.filter(caterogies)
+#     return render(request, )
