@@ -1,5 +1,2 @@
 Watching for file changes with StatReloader
-[26/Sep/2025 13:45:38,872] - Broken pipe from ('127.0.0.1', 59073)
-C:\Users\Prof. Nicholas\Desktop\Code\kitchen\ecom\ecom\settings.py changed, reloading.
 Watching for file changes with StatReloader
-[26/Sep/2025 13:48:01] "GET / HTTP/1.1" 200 5092
