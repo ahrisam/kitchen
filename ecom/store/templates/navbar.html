@@ -1,47 +1,80 @@
 {% load static %}
 <header class="header">
-        <nav class="nav container">
-            <div class="nav__data">
-                <a href="#" class="nav__logo" >
-                    <img src="{% static 'images/logo.png'%}" alt="logo"> Saminel Flame
-                </a>
-            </div> 
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <nav class="nav container">
+        <div class="nav__data">
+            <a href="#" class="nav__logo">
+                <img src="{% static 'images/logo.png'%}" alt="logo"> Saminel Flame
+            </a>
+        </div>
 
-            <div class="nav__toggle" id="nav-toggle" aria-label="Open menu" tabindex="0">
-                <i class="ri-menu-line nav__toggle-menu"></i>
-                <i class="ri-close-line nav__toggle-close"></i>
-            </div>
+        <div class="nav__toggle" id="nav-toggle" aria-label="Open menu" tabindex="0">
+            <i class="ri-menu-line nav__toggle-menu"></i>
+            <i class="ri-close-line nav__toggle-close"></i>
+        </div>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="navlist">
-                    <li>
-                        <a href="{% url 'index' %}" class="nav__link">Home</a>
-                    </li>
-                    <!-- dropdown 1-->
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">Menu
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                    </li>
-                    <!-- dropdown 2-->
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">About
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-                    </li>
-                    <!-- dropdown 3-->
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">Our Story
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-                    </li>
-                    <!-- dropdown 4 -->
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">Contact
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-                    </li>
-                    <li><span>0</span></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="nav__menu" id="nav-menu">
+            <ul class="navlist">
+                <li>
+                    <a href="{% url 'index' %}" class="nav__link">Home</a>
+                </li>
+                <!-- dropdown 1-->
+                <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">
+                        Menu
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                    <ul class="dropdown__menu">
+                        {% for category in categories %}
+                        <li><a href="#" class="dropdown__link">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
+                <!-- dropdown 2-->
+                <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">About
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                </li>
+                <!-- dropdown 3-->
+                <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">Our Story
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                </li>
+                <!-- dropdown 4 -->
+                <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">Contact
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                </li>
+                <li><span id="cart-quantity">0</span></li>
+            </ul>
+        </div>
+        <script>
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            // Toggle mobile menu
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('show-menu');
+                navToggle.classList.toggle('active');
+            });
+
+            // Handle dropdowns
+            document.querySelectorAll('.dropdown__button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent bubbling that might close the menu
+                    const parent = button.closest('.dropdown__item');
+                    parent.classList.toggle('active');
+
+                    // Optional: close other dropdowns
+                    document.querySelectorAll('.dropdown__item').forEach(item => {
+                        if (item !== parent) item.classList.remove('active');
+                    });
+                });
+            });
+        </script>
+    </nav>
 </header>
