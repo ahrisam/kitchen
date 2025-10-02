@@ -26,7 +26,7 @@
                     </div>
                     <ul class="dropdown__menu">
                         {% for category in categories %}
-                        <li><a href="#" class="dropdown__link">{{ category.name }}</a></li>
+                        <li><a href="{% url 'category' category.name %}" class="dropdown__link">{{ category.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
@@ -52,29 +52,6 @@
                 <li><span id="cart-quantity">0</span></li>
             </ul>
         </div>
-        <script>
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-
-            // Toggle mobile menu
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('show-menu');
-                navToggle.classList.toggle('active');
-            });
-
-            // Handle dropdowns
-            document.querySelectorAll('.dropdown__button').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Prevent bubbling that might close the menu
-                    const parent = button.closest('.dropdown__item');
-                    parent.classList.toggle('active');
-
-                    // Optional: close other dropdowns
-                    document.querySelectorAll('.dropdown__item').forEach(item => {
-                        if (item !== parent) item.classList.remove('active');
-                    });
-                });
-            });
-        </script>
+        <script src="{% static 'js/dropdown.js' %}"></script>
     </nav>
 </header>
