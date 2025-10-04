@@ -10,7 +10,8 @@ def index(request):
 
 def product(request, pk):
     product = Product.objects.get(id=pk)
-    return render(request, "product.html", {'product':product})
+    related_products = Product.objects.filter(category=product.category).exclude(pk=product.pk)
+    return render(request, "product.html", {'product':product, 'related_products':related_products})
 
 
 def category(request, foo):
