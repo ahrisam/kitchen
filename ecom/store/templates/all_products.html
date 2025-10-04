@@ -19,7 +19,7 @@
     <nav class="category-navbar">
         <ul>
             {% for category in categories %}
-            <li><a href="#{{ category.slug }}">{{ category.name }}</a></li>
+            <li><a href="#">{{ category.name }}</a></li>
             {% endfor %}
         </ul>
     </nav>
@@ -34,7 +34,7 @@
 
     <!-- Products by Category -->
     {% for category, products in product_by_category.items %}
-    <section id="{{ category.slug }}" class="category-section">
+    <section id="{{ category.name }}" class="category-section">
         <h2>{{ category.name }}</h2>
         <div class="products">
             {% for product in products %}
