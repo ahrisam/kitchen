@@ -14,9 +14,16 @@ document.querySelectorAll('.dropdown__button').forEach(button => {
         const parent = button.closest('.dropdown__item');
         parent.classList.toggle('active');
 
-        // close other dropdowns
+        // Close other dropdowns
         document.querySelectorAll('.dropdown__item').forEach(item => {
             if (item !== parent) item.classList.remove('active');
         });
+    });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown__item.active').forEach(item => {
+        item.classList.remove('active');
     });
 });
