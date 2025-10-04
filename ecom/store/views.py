@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Category
 
 
 def index(request):
     products = Product.objects.all()
     categories = Category.objects.all()
-
+    
     return render(request, 'index.html',{'products': products,'categories':categories})
 
 def product(request, pk):
@@ -17,8 +17,12 @@ def category(request, foo):
     foo = foo.replace('-', ' ')
     category = Category.objects.get(name=foo)
     products = Product.objects.filter(category=category)
-    return render(request, "category.html", {'product': products, 'category':category})
+    return render(request, "category.html", {'products': products, 'category':category})
 
 def all_product(request):
-    category = Category.objects.all().order_by('name')
-    return render(request, 'all_products.html', {'category':category})
+    categories = Category.objects.all()
+    product_by_category = {}
+    for category in categories:
+        product_by_category[category] = Product.objects.filter(category=category)
+    print(product_by_category)
+    return render(request, 'all_products.html',{'categories':categories, 'product_by_category':product_by_category})
