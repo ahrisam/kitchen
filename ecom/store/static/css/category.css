@@ -1,0 +1,123 @@
+:root {
+    --first-color: #0A174E;
+    --first-color-lighten: #CED46A;
+    --title-color: #101820;
+    --text-color: hsl(220, 12%, 45%);
+    --body-color: papayawhip;
+    --body-font-family: 'Poppins', sans-serif;
+    --font-semi-bold: 600;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font-family);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: var(--first-color);
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+header p {
+    font-size: 1rem;
+}
+
+/* Products Grid */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    transition: transform .3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: .75rem;
+    margin-bottom: 1rem;
+    height: 200px;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: .5rem;
+    color: var(--title-color);
+}
+
+.product-card p {
+    font-size: 1rem;
+    margin-bottom: .75rem;
+}
+
+.btn {
+    background: var(--first-color);
+    color: #fff;
+    padding: .6rem 1.2rem;
+    border-radius: .5rem;
+    font-weight: var(--font-semi-bold);
+    transition: background .3s;
+    border: none;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: auto;
+}
+
+.btn:hover {
+    background: var(--first-color-lighten);
+    color: var(--first-color);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .products {
+        grid-template-columns: 1fr 1fr;
+    }
+}
