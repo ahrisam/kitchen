@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/all_products.css'%}">
+</head>
+
+<body>
+
+    <!-- Category Navbar -->
+     {% include "navbar.html"%}
+    <nav class="category-navbar">
+        <ul>
+            {% for category in categories %}
+            <li><a href="#">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero__content">
+            <h1>Our Menu</h1>
+            <p>Explore delicious meals by category</p>
+        </div>
+    </section>
+
+    <!-- Products by Category -->
+    {% for category, products in product_by_category.items %}
+    <section id="{{ category.name }}" class="category-section">
+        <h2>{{ category.name }}</h2>
+        <div class="products">
+            {% for product in products %}
+            <div class="product-card">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>₵{{ product.price }}</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            {% empty %}
+            <p>No products in this category yet.</p>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+
+</body>
+
+</html>

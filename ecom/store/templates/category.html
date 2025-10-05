@@ -1,1 +1,38 @@
-{{ category.image }}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ category.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+</head>
+
+<body>
+
+    <!-- Category Header -->
+    <header>
+        <h1>{{ category.name }}</h1>
+        <p>Browse all items in this category</p>
+    </header>
+
+    <!-- Products -->
+    <div class="products">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>₵{{ product.price }}</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        {% empty %}
+        <p>No products available in this category yet.</p>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>

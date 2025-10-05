@@ -5,6 +5,7 @@ from django.http import JsonResponse
 
 
 def cart_add(request):
+<<<<<<< HEAD
     cart = Cart(request)
 
     if request.POST.get('action') == 'post':
@@ -19,4 +20,6 @@ def cart_add(request):
         return response
 
 def cart_summary(request):
+=======
+>>>>>>> 05f27e4ccb813b14f871a2067d2d5dc9110c37de
     pass

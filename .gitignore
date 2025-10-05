@@ -10,3 +10,11 @@ ecom/db.sqlite3
 *.pyc
 ecom/store/__pycache__/views.cpython-312.pyc
 *.pyc
+*.sqlite3
+*.pyc
+*.pyc
+*.pyc
+ecom/store/__pycache__/views.cpython-312.pyc
+ecom/store/__pycache__/views.cpython-312.pyc
+*.pyc
+*.pyc

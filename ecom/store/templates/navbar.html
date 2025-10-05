@@ -1,18 +1,28 @@
 {% load static %}
 <header class="header">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<<<<<<< HEAD
         <nav class="nav container">
             <div class="nav__data">
                 <a href="#" class="nav__logo" >
                     <img src="{% static 'images/logo.png'%}" alt="logo"> Saminel Flame
                 </a>
             </div> 
+=======
+    <nav class="nav container">
+        <div class="nav__data">
+            <a href="#" class="nav__logo">
+                <img src="{% static 'images/logo.png'%}" alt="logo"> Saminel Flame
+            </a>
+        </div>
+>>>>>>> 05f27e4ccb813b14f871a2067d2d5dc9110c37de
 
-            <div class="nav__toggle" id="nav-toggle" aria-label="Open menu" tabindex="0">
-                <i class="ri-menu-line nav__toggle-menu"></i>
-                <i class="ri-close-line nav__toggle-close"></i>
-            </div>
+        <div class="nav__toggle" id="nav-toggle" aria-label="Open menu" tabindex="0">
+            <i class="ri-menu-line nav__toggle-menu"></i>
+            <i class="ri-close-line nav__toggle-close"></i>
+        </div>
 
+<<<<<<< HEAD
             <div class="nav__menu" id="nav-menu">
                 <ul class="navlist">
                     <li>
@@ -45,4 +55,47 @@
                 </ul>
             </div>
         </nav>
+=======
+        <div class="nav__menu" id="nav-menu">
+            <ul class="navlist">
+                <li>
+                    <a href="{% url 'index' %}" class="nav__link">Home</a>
+                </li>
+                <!-- dropdown 1-->
+                <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">
+                        Menu
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                    <ul class="dropdown__menu">
+                        {% for category in categories %}
+                        <li><a href="{% url 'category' category.name %}" class="dropdown__link">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
+                <!-- dropdown 2-->
+                <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">About
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                </li>
+                <!-- dropdown 3-->
+                <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">Our Story
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                </li>
+                <!-- dropdown 4 -->
+                <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">Contact
+                        <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                </li>
+                <li><span id="cart-quantity">0</span></li>
+            </ul>
+        </div>
+        <script src="{% static 'js/dropdown.js' %}"></script>
+    </nav>
+>>>>>>> 05f27e4ccb813b14f871a2067d2d5dc9110c37de
 </header>

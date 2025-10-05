@@ -54,7 +54,10 @@ a {
     z-index: var(--z-fixed);
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05f27e4ccb813b14f871a2067d2d5dc9110c37de
 .hero {
   background: url("../images/restaurant-view.jpg") center/cover no-repeat; 
   min-height: 80vh;

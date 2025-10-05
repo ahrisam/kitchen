@@ -20,7 +20,7 @@
             <div class="hero__content container">
                 <h1>Find Your Taste</h1>
                 <p>Bakery &amp; Cafe</p>
-                <button class="btn">See all Products</button>
+                <a href="{% url 'all_product' %}" class="btn">See all Products</a>
             </div>
         </section>
 
@@ -31,13 +31,13 @@
             <div class="products">
             {% for product in products %}
                 {% if product.is_bestseller %}
-               <div class="product-card">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                <h3>{{ product.name }}</h3>
-                <p>₵{{product.price}}</p>
-                <a href="{% url 'product' product.id %}" class="btn">View Product</a>
-            </div>
-                {% endif%}
+                    <div class="product-card">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <h3>{{ product.name }}</h3>
+                        <p>₵{{product.price}}</p>
+                        <a href="{% url 'product' product.id %}" class="btn">View Product</a>
+                    </div>
+                {% endif %}
             {% endfor %}
             </div>
          </div>   
@@ -61,7 +61,6 @@
             </div>
         </section>
     </main>
-    .footer
 
     <!--MAIN JS-->
     <script src="{% static 'js/index.js'%}"></script>
