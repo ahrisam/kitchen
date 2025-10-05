@@ -9,8 +9,8 @@ def index(request):
     return render(request, 'index.html',{'products': products,'categories':categories})
 
 def product(request, pk):
-    product = Product.objects.get(id=pk)
-    return render(request, "product.html", {'product':product})
+    products = Product.objects.get(id=pk)
+    return render(request, "product.html", {'product':products})
 
 # def category(request, foo):
 #     foo = foo.replace('-', ' ')

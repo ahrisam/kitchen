@@ -1,0 +1,137 @@
+@import url('index.css');
+
+
+
+nav {
+   height: var(--header-height);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.nav__data {
+   display: flex;
+   align-items: center;
+}
+
+.nav__logo {
+   display: inline-flex;
+   align-items: center;
+   column-gap: .5rem; 
+   color: var(--title-color);
+   font-weight: var(--font-semi-bold);
+   transition: color .3s;
+}
+
+.nav__logo img {
+   height: 40px;
+   width: auto;
+   object-fit: contain;
+   display: block;
+   transition: transform .3s ease;
+}
+
+.nav__logo:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.nav__toggle {
+   margin-left: auto;
+   width: 32px;
+   height: 32px;
+   display: grid;
+   place-items: center;
+   cursor: pointer;
+   position: relative;
+}
+
+.nav__toggle-menu,
+.nav__toggle-close {
+   font-size: 1.25rem;
+   color: var(--title-color);
+   position: absolute;
+   transition: opacity .1s, transform .4s;
+   cursor: pointer;
+}
+
+.nav__toggle-menu {
+   opacity: 1;
+   pointer-events: auto;
+}
+
+.nav__toggle-close {
+   opacity: 0;
+   pointer-events: none;
+   transform: rotate(180deg);
+}
+
+
+.nav__menu {
+   display: flex;
+   align-items: center;
+   column-gap: 2rem;   
+   position: static; 
+   opacity: 1;
+   pointer-events: auto;
+   height: auto;
+   width: auto;
+   background: none;
+   transition: none;
+}
+
+.navlist {
+   display: flex;
+   align-items: center;
+   column-gap: 1.5rem; 
+}
+
+
+.nav__toggle {
+   display: none;
+}
+
+
+@media screen and (max-width: 1118px){
+   .nav__menu{
+      background-color: var(--body-color);
+      position: absolute;
+      left: 0;
+      top: 2.5rem;
+      width: 100%;
+      height: calc(100vh - 3.5rem);
+      overflow: auto;
+      padding-block: 1.5rem 4rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: top .4s, opacity .3s;
+      z-index: 99;
+      display: block;
+   }
+   .nav__menu.show-menu {
+      opacity: 1;
+      pointer-events: auto;
+      top: var(--header-height);
+   }
+
+   .nav__toggle {
+      display: grid;
+   }
+
+   .navlist {
+      display: block;
+   }
+}
+
+.nav__link{
+   color: var(--title-color);
+   font-weight: var(--font-semi-bold);
+   padding: 1.25rem 1.5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: background-color .3s;
+}
+
+.nav__link:hover {
+   background: var(--first-color-lighten); 
+}

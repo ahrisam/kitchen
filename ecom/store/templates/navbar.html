@@ -1,5 +1,6 @@
 {% load static %}
 <header class="header">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
         <nav class="nav container">
             <div class="nav__data">
                 <a href="#" class="nav__logo" >
@@ -40,7 +41,7 @@
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
                     </li>
-                    <li><span>0</span></li>
+                    <li><span id="cart_quantity">{{ cart|length }}</span></li>
                 </ul>
             </div>
         </nav>
