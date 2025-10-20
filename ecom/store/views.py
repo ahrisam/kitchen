@@ -5,19 +5,15 @@ from .models import Product, Category
 def index(request):
     products = Product.objects.all()
     categories = Category.objects.all()
-    
+
     return render(request, 'index.html',{'products': products,'categories':categories})
 
 def product(request, pk):
-<<<<<<< HEAD
     products = Product.objects.get(id=pk)
     return render(request, "product.html", {'product':products})
-=======
     product = Product.objects.get(id=pk)
     related_products = Product.objects.filter(category=product.category).exclude(pk=product.pk)
     return render(request, "product.html", {'product':product, 'related_products':related_products})
->>>>>>> 05f27e4ccb813b14f871a2067d2d5dc9110c37de
-
 
 def category(request, foo):
     foo = foo.replace('-', ' ')
