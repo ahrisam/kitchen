@@ -1,0 +1,163 @@
+.nav {
+   height: 3rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.nav__data {
+   display: flex;
+   align-items: center;
+}
+
+.nav__logo {
+   display: inline-flex;
+   align-items: center;
+   column-gap: .5rem;
+   color: #101820;
+   font-weight: 600;
+   transition: color .3s;
+}
+
+.nav__logo img {
+   height: 40px;
+   object-fit: contain;
+   transition: transform .3s ease;
+}
+
+.nav__logo:hover {
+   transform: rotate(-5deg) scale(1.05);
+}
+
+.nav__toggle {
+   margin-left: auto;
+   width: 32px;
+   height: 32px;
+   display: grid;
+   place-items: center;
+   cursor: pointer;
+   position: relative;
+}
+
+.nav__toggle-menu,
+.nav__toggle-close {
+   font-size: 1.25rem;
+   color: #101820;
+   position: absolute;
+   transition: opacity .1s, transform .4s;
+   cursor: pointer;
+}
+
+.nav__toggle-menu {
+   opacity: 1;
+   pointer-events: auto;
+}
+
+.nav__toggle-close {
+   opacity: 0;
+   pointer-events: none;
+   transform: rotate(180deg);
+}
+
+.nav__menu {
+   display: flex;
+   align-items: center;
+   column-gap: 2rem;
+}
+
+.navlist {
+   display: flex;
+   align-items: center;
+   column-gap: 1.5rem;
+}
+
+.nav__toggle {
+   display: none;
+}
+
+@media screen and (max-width: 1118px) {
+   .nav__menu {
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      top: 2.5rem;
+      width: 100%;
+      height: calc(100vh - 3.5rem);
+      overflow: auto;
+      padding-block: 1.5rem 4rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: top .4s, opacity .3s;
+      z-index: 99;
+      display: block;
+   }
+
+   .nav__menu.show-menu {
+      opacity: 1;
+      pointer-events: auto;
+      top: 3rem;
+   }
+
+   .nav__toggle {
+      display: grid;
+   }
+
+   .navlist {
+      display: block;
+   }
+}
+
+.nav__link {
+   color: #101820;
+   font-weight: 600;
+   padding: 1.25rem 1.5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: background-color .3s;
+}
+
+.nav__link:hover {
+   background: #CED46A;
+}
+
+.dropdown__menu {
+   display: none;
+   position: absolute;
+   top: 100%;
+   left: 0;
+   min-width: 180px;
+   background-color: #fff;
+   border-radius: 0.5rem;
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+   padding: 0.5rem 0;
+   z-index: 1000;
+}
+
+.dropdown__item {
+   position: relative;
+}
+
+.dropdown__item.active .dropdown__menu {
+   display: block;
+}
+
+.dropdown__link {
+   display: block;
+   padding: 0.75rem 1.25rem;
+   color: #555;
+   transition: background-color 0.3s ease;
+   font-size: 0.95rem;
+}
+
+.dropdown__link:hover {
+   background-color: #CED46A;
+}
+
+.dropdown__arrow {
+   transition: transform 0.3s ease;
+}
+
+.dropdown__item.active .dropdown__arrow {
+   transform: rotate(180deg);
+}

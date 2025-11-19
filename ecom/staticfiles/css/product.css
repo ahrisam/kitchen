@@ -1,0 +1,127 @@
+ body {
+     font-family: 'Segoe UI', sans-serif;
+     background-color: #fff;
+     color: #3e2f1c;
+     margin: 0;
+     padding: 0;
+ }
+
+ .container {
+     max-width: 1200px;
+     margin: auto;
+     padding: 2rem 1rem;
+ }
+
+ .product-section {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 2rem;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .product-card {
+     flex: 1 1 400px;
+     max-width: 400px;
+     border-radius: 1rem;
+     background-color: #fafafa;
+     padding: 1rem;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+ }
+
+ .product-card img {
+     width: 100%;
+     height: 300px;
+     object-fit: cover;
+     border-radius: 1rem;
+ }
+
+ .product-card h1 {
+     font-size: 2rem;
+     color: #a67c52;
+     margin: 1rem 0 0.5rem;
+ }
+
+ .product-card p.price {
+     font-size: 1.4rem;
+     font-weight: bold;
+     color: #a67c52;
+ }
+
+ .product-card p.description {
+     margin: 1rem 0;
+     line-height: 1.6;
+ }
+
+ .product-card form {
+     margin-top: 1rem;
+ }
+
+ .product-card label {
+     font-weight: bold;
+ }
+
+ .product-card input[type="number"] {
+     padding: .5rem;
+     width: 80px;
+     margin-right: 1rem;
+     border: 1px solid #ccc;
+     border-radius: .3rem;
+ }
+
+ .btn {
+     background-color: #a67c52;
+     color: #fff;
+     padding: .6rem 1.2rem;
+     border: none;
+     border-radius: .3rem;
+     cursor: pointer;
+     font-weight: bold;
+ }
+
+ .related-section {
+     margin-top: 3rem;
+ }
+
+ .related-section h2 {
+     font-size: 1.8rem;
+     color: #a67c52;
+     margin-bottom: 1rem;
+     text-align: center;
+ }
+
+ .related-grid {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 2rem;
+     justify-content: center;
+ }
+
+ .related-card {
+     flex: 1 1 400px;
+     max-width: 400px;
+     border-radius: 1rem;
+     background-color: #fafafa;
+     padding: 1rem;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+     text-align: center;
+ }
+
+ .related-card img {
+     width: 100%;
+     height: 300px;
+     object-fit: cover;
+     border-radius: 1rem;
+ }
+
+ .related-card h3 {
+     font-size: 1.5rem;
+     color: #a67c52;
+     margin: 1rem 0 0.5rem;
+ }
+
+ .related-card p {
+     font-size: 1.2rem;
+     color: #555;
+     margin-bottom: 1rem;
+ }

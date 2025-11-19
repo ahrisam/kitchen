@@ -3,7 +3,7 @@ from .models import Product, Category
 
 
 def index(request):
-    products = Product.objects.all()
+    products = Product.objects.select_related('category').all()
     categories = Category.objects.all()
     
     return render(request, 'index.html',{'products': products,'categories':categories})
@@ -25,5 +25,4 @@ def all_product(request):
     product_by_category = {}
     for category in categories:
         product_by_category[category] = Product.objects.filter(category=category)
-    print(product_by_category)
     return render(request, 'all_products.html',{'categories':categories, 'product_by_category':product_by_category})

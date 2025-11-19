@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Summary</title>
+    <link rel="stylesheet" href="{% static 'cart_summary.css' %}">
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="container">
+            <h1 class="logo">MyRestaurant</h1>
+            <ul class="nav__list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="cart.html" class="active">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart container">
+        <h2>Your Cart</h2>
+
+        <div class="cart__items">
+            {% if cart_products %}
+            {% for product in cart_products %}
+            <div class="cart__item">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <div class="cart__details">
+                    <h3>{{ product.name }}</h3>
+                    <p>₵{{ product.price }}</p>
+                    <div class="cart__quantity">
+                        <button type="button">-</button>
+                        <input type="number" value="{{ product.quantity|default:1 }}" min="1">
+                        <button type="button">+</button>
+                    </div>
+                </div>
+                <span class="cart__subtotal">₵{{ product.get_subtotal|default:"0.00" }}</span>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>Your cart is empty.</p>
+            {% endif %}
+        </div>
+
+        <!-- Cart Summary
+        <div class="cart__summary">
+            <h3>Order Summary</h3>
+            <div class="summary__row">
+                <span>Subtotal</span>
+                <span>$35.97</span>
+            </div>
+            <div class="summary__row">
+                <span>Tax</span>
+                <span>$3.60</span>
+            </div>
+            <div class="summary__row total">
+                <span>Total</span>
+                <span>$39.57</span>
+            </div>
+            <a href="checkout.html" class="btn">Proceed to Checkout</a>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <p>&copy; 2025 MyRestaurant. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
