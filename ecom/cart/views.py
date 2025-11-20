@@ -12,6 +12,7 @@ def cart_add(request):
         product_qty = int(request.POST.get('product_qty'))
         product = get_object_or_404(Product, id=product_id)
         cart.add(product=product, quantity=product_qty)
+        products = Product.objects.get(id)
 
         cart_quantity = cart.__len__()
 
