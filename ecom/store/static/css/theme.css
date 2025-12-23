@@ -1,0 +1,88 @@
+/* Global theme for the site - variables, base, utilities */
+:root{
+  --bg: #fbfbfd;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --accent: #D6E66A; /* warm green */
+  --accent-600: #b9cc4f;
+  --brand: #101820;
+  --radius: 10px;
+  --shadow-sm: 0 6px 16px rgba(16,24,40,0.06);
+  --shadow-md: 0 12px 30px rgba(16,24,40,0.08);
+}
+
+/* Typography and base */
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg,var(--bg),#f6f8f9);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* Container */
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+}
+
+/* Cards */
+.card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  padding:1rem;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--brand);
+  color:#fff;
+  padding:.55rem .9rem;
+  border-radius:8px;
+  border: none;
+  cursor:pointer;
+  font-weight:600;
+  text-decoration:none;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+
+/* Form elements */
+input[type="number"], input[type="text"], textarea, select{
+  padding:.5rem .6rem;
+  border-radius:8px;
+  border:1px solid #e6e9ee;
+  background: #fff;
+  color:var(--text);
+}
+
+/* Utilities */
+.muted{color:var(--muted)}
+.price{color:var(--brand);font-weight:700}
+
+/* Responsive helpers */
+@media (max-width:768px){
+  .container{padding:0 .75rem}
+}
+
+/* Small helpers for product grids */
+.grid{display:grid;gap:1rem}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+
+/* Nice image treatment */
+img{max-width:100%;height:auto;display:block;border-radius:8px}
+
+/* Accent utility */
+.accent-bg{background:linear-gradient(90deg,var(--accent),var(--accent-600));color:#0b0b0b}

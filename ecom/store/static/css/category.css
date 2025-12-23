@@ -1,3 +1,5 @@
+@import url('theme.css');
+
 :root {
     --first-color: #0A174E;
     --first-color-lighten: #CED46A;
