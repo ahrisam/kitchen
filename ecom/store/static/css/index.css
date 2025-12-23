@@ -30,13 +30,8 @@ body {
     color: var(--text-color);
 }
 
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
+ul { list-style: none; }
+a { text-decoration: none; }
 
 .container {
     max-width: 1120px;
@@ -54,10 +49,6 @@ a {
     z-index: var(--z-fixed);
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 05f27e4ccb813b14f871a2067d2d5dc9110c37de
 .hero {
   background: url("../images/restaurant-view.jpg") center/cover no-repeat; 
   min-height: 80vh;
@@ -74,7 +65,7 @@ a {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.4); /* dark overlay */
+  background: rgba(0,0,0,0.4); 
 }
 
 .hero__content {
